@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     ifstream f;
-    f.open("abcd.pcap");
+    f.open("mypack.pcap");
     unsigned char temp;
     int c=1;
     vector<unsigned char> MAC_Dest_add;
