@@ -14,14 +14,14 @@ int main(){
    struct pcap_pkthdr *header;
 
    const u_char *data;
-   u_int packetCount = 0;
+   u_int packetCnt = 0;
     while (int returnValue = pcap_next_ex(pcap, &header, &data) >= 0)
     {
-        printf("Packet # %i\n", ++packetCount);
+        printf("Packet # %i\n", ++packetCnt);
      printf("Packet size: %d bytes\n", header->len);
 
         if (header->len != header->caplen)
-            printf("Warning! Capture size different than packet size: %ld bytes\n", header->len);
+            printf("Error! Capture size != packet size: %ld bytes\n", header->len);
        printf("Epoch Time: %d:%d seconds\n", header->ts.tv_sec, header->ts.tv_usec);
        for (u_int i=0; (i < header->caplen ) ; i++)
         {
