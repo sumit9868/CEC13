@@ -10,24 +10,24 @@ using namespace std;
 int main(int argc, char const *argv[])
 {
     bool first=true;
-    int sock = 0, valread;
-    struct sockaddr_in serv_addr;
-    if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
+    int sckt = 0, valr;
+    struct sockaddr_in srvrAddr;
+    if ((sckt = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     {
         printf("\n Socket creation error \n");
         return -1;
     }
 
-    serv_addr.sin_family = AF_INET;
-    serv_addr.sin_port = htons(PORT);
+    srvrAddr.sin_family = AF_INET;
+    srvrAddr.sin_port = htons(PORT);
 
-    if(inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr)<=0)
+    if(inet_pton(AF_INET, "127.0.0.1", &srvrAddr.sin_addr)<=0)
     {
         printf("\nInvalid address/ Address not supported \n");
         return -1;
     }
 
-    if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
+    if (connect(sckt, (struct sockaddr *)&srvrAddr, sizeof(srvrAddr)) < 0)
     {
         printf("\nConnection Failed \n");
         return -1;
@@ -42,7 +42,7 @@ int main(int argc, char const *argv[])
             {cin.ignore();}
             first=false;
             cin.getline(msg,1024,'\n');
-            send(sock , msg , strlen(msg) , 0 );
+            send(sckt , msg , strlen(msg) , 0 );
             if(msg[0]=='q' && msg[1]=='u' && msg[2]=='i'&& msg[3]=='t')
             {
                 break;
@@ -50,13 +50,13 @@ int main(int argc, char const *argv[])
             printf("\nmessage sent,enter \'+\' to send more messages:");
             char test;
             scanf("%c",&test);
-            if(test!='+'){send(sock,"+",1,0);break;}
+            if(test!='+'){send(sckt,"+",1,0);break;}
         }
         while(true)
         {
             char buffer[1024]={0};
             printf("SERVER:");
-            valread = read( sock , buffer, 1024);
+            valr = read( sckt , buffer, 1024);
             if(buffer[0]=='+'){break;}
             printf("%s\n",buffer );
             if(msg[0]=='q' && msg[1]=='u' && msg[2]=='i'&& msg[3]=='t')

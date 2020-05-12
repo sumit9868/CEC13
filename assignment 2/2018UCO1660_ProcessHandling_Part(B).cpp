@@ -39,17 +39,17 @@ int main()
     else 
     { 
         
-        printf("\nPARENT: sending SIGHUP\n\n"); 
+        cout<<"\nPARENT: sending SIGHUP\n\n"; 
         sleep(2);
         kill(Cid, SIGHUP); 
   
         
-        printf("\nPARENT: sending SIGINT\n\n"); 
+        cout<<"\nPARENT: sending SIGINT\n\n"; 
         sleep(2);
         kill(Cid, SIGINT); 
   
         
-        printf("\nPARENT: sending SIGQUIT\n\n"); 
+        cout<<"\nPARENT: sending SIGQUIT\n\n"; 
         sleep(2);
         kill(Cid, SIGQUIT); 
         

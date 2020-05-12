@@ -54,7 +54,7 @@ int main(int argc, char const *argv[])
             cout<<"CLIENT:";
             if(buffer[0]=='q' && buffer[1]=='u' && buffer[2]=='i' && buffer[3]=='t')
             {
-                send(new_socket,"SEE YOU SOON",12,0);
+                send(new_socket,"See you later",12,0);
                 cout<<buffer;
                 return 0;
             }
