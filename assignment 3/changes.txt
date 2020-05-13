@@ -1,0 +1,19 @@
+deleted all comments
+Original | Replaced
+line 15 User|user
+line 19 ip|IP
+line 22 groupNum|groupNo
+line 37 commented string connectionTime="";
+line 39 commented function void displaySendMessages()
+line 43 commented function void displayRecMessages()
+line 73 result|userList
+line 87 key|prt
+line 341 deleted empty else block
+line 76 rephreased text
+line 134 mess,sen,rec|msg,sndr,rcvr
+line 155 mess,senPort,recName|msg,sndrPrt,rcvrName
+line 164 rephreased text
+line 182 rephreased text
+line 206 clientHandler|clientMsg
+line 212 buff|bffr
+line 370 added void* arg; arg=&i; and replaced (void *)i | arg
