@@ -34,17 +34,6 @@ class user {
         this->groupNo = rand()%2;
     }
 
-    // string connectionTime = "";
-
-    // void displaySendMessages(){
-
-    // }
-
-    // void displayRecMessages(){
-
-    // }
-
-
 };
 
 
@@ -124,8 +113,6 @@ public:  MessagesSystem(){
     class Message {
 
     public:
-
-        public :
         
         string message;
         user* sender = NULL;
@@ -205,8 +192,8 @@ void *handleSingleClient(void *Tid){
 
     string clientMsg = "Welcome to the LAN Chat Application";
 
-     char *mess = &clientMsg[0];
-      send(clientSocket, mess,clientMsg.length(), 0);
+     char *msg = &clientMsg[0];
+      send(clientSocket, msg,clientMsg.length(), 0);
 
 
        char bffr[4096];
@@ -305,10 +292,10 @@ void *handleSingleClient(void *Tid){
 
 
             if (clientReq.compare(quitStr)==0){
-                string closingMess = "Client wants to close the connection. - CLOSING";
-                char *mess = &closingMess[0];
-                send(clientSocket, mess,closingMess.length(), 0);
-                cout<<closingMess<<endl;
+                string closingMsg = "Client closing the connection";
+                char *msg = &closingMsg[0];
+                send(clientSocket, msg,closingMsg.length(), 0);
+                cout<<closingMsg<<endl;
                 break;
             }
 
@@ -345,7 +332,7 @@ int clientHandler()
      listening = socket(AF_INET, SOCK_STREAM, 0);
     if (listening == -1)
     {
-        cout << "Can't create a socket! Quitting" << endl;
+        cout << "Error creating a socket! Quitting" << endl;
         return -1;
     }
 

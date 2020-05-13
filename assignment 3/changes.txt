@@ -14,6 +14,7 @@ line 134 mess,sen,rec|msg,sndr,rcvr
 line 155 mess,senPort,recName|msg,sndrPrt,rcvrName
 line 164 rephreased text
 line 182 rephreased text
+line 195 mess|msg
 line 206 clientHandler|clientMsg
 line 212 buff|bffr
 line 370 added void* arg; arg=&i; and replaced (void *)i | arg
