@@ -24,7 +24,7 @@ void userDataToFile(string userCred,string attd){
 string srvrResponse(char*bffr,int sock);
 
 int attachClientToServer(string accntData){
-    //    Create a socket
+
     bool loggedIn = false;
        int sock = socket(AF_INET, SOCK_STREAM, 0);
        if (sock == -1)

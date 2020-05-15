@@ -42,4 +42,5 @@ int main()
         if(curr[i]=='1'){cout<<"\nERROR DETECTED";return 0;}
     }
     cout<<"\nNO ERROR DETECTED";
+    return 0;
 }

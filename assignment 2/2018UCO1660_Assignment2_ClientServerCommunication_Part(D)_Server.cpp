@@ -27,7 +27,7 @@ int main(int argc, char const *argv[]){
         perror("socket failed");
         exit(EXIT_FAILURE);
     }
-    // Forcefully attaching socket to the port 8080
+    
     Addr.sin_family = AF_INET;
     Addr.sin_addr.s_addr = INADDR_ANY;
     Addr.sin_port = htons( prtNo );
