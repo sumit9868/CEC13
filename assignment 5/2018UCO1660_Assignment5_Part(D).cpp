@@ -5,10 +5,7 @@ int main() {
     int data[10];
     int recvdData[10],c,c1,c2,c3,i;
     cout<<"Enter 4 bits of data one at a time:";
-    cin>>data[0];
-    cin>>data[1];
-    cin>>data[2];
-    cin>>data[4];
+    cin>>data[0]>>data[1]>>data[2]>>data[4];
     data[6]=data[0]^data[2]^data[4];
 	data[5]=data[0]^data[1]^data[4];
 	data[3]=data[0]^data[1]^data[2];
