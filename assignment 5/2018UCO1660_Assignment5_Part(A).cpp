@@ -4,7 +4,7 @@ using namespace std;
 
 int main()
 {
-    cout<<"String:";
+    cout<<"Input String:";
     string str;
     cin>>str;
     if(str.length()<8){cout<<"Invalid Input";return 0;}
@@ -32,4 +32,6 @@ int main()
         prv=prv.substr(1)+res[i];
     }
     cout<<"\nExtracted Input String:"<<input;
+
+    return 0;
 }
